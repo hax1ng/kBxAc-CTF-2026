@@ -1,0 +1,55 @@
+============================================================
+LEGACY SECURE GATEWAY - RECOVERED TRAFFIC
+============================================================
+
+Incident ID : GH-042
+Protocol    : Legacy finite-field Diffie-Hellman
+Status      : COMPROMISED
+
+The following material was recovered from a legacy
+secure gateway during an incident investigation.
+
+Only public handshake values and the encrypted payload
+were recovered. Private exponents and the original
+plaintext were not recovered.
+
+
+[GROUP PARAMETERS]
+
+p = 88000753428701489113490993450865560865075124813304102617544373043200000001
+g = 18935151604271057755988199578124546584801734055481457746415726705868881325
+
+
+[CLIENT HELLO]
+
+A = 856648410561794340416538813121044592228714914232497557125907449024211481
+
+
+[SERVER HELLO]
+
+B = 31388649449514431261745477998552915328450496654874229059581132104017862585
+
+
+[KEY DERIVATION]
+
+algorithm = HKDF-SHA256
+kdf_salt = 4a927d5cbda2656dd113c68d0bf48f82
+kdf_info = ghost-in-the-group/aes-gcm
+kdf_length = 32
+
+
+[ENCRYPTED PAYLOAD]
+
+algorithm = AES-256-GCM
+nonce = 3aa4af98c6b9091299366131
+ciphertext = c8ebf04f1a069781ea4245b921d8776a2259257d10cfc79bca9ada79fd5bb3be57bae20f33f92c22731f8df4819c31af0d5edf1d76a9a3a6abbe5db90f71856742e713e8e3b1e99da9efd600b3a4c155ca
+
+
+[ANALYST NOTE]
+
+The gateway was using a legacy finite-field DH configuration.
+No private key material was present in the recovered traffic.
+
+The encrypted payload appears to have been derived from
+the negotiated DH shared secret.
+============================================================

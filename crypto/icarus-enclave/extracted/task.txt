@@ -1,0 +1,15 @@
+ICARUS ENCLAVE
+
+The recovery package has been opened.
+
+Whatever happened to Icarus was not completely erased.
+Fragments of the enclave's recovery process remain inside.
+
+The recovered data appears to have been left behind deliberately,
+but its purpose is unclear.
+
+Your task is to trace what remains, recover what was lost,
+and uncover the final secret.
+
+Flag format:
+kBxAc{...}

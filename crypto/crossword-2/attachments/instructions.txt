@@ -1,0 +1,30 @@
+## Instructions
+In this crossword, each alphabetical character has been replaced by a randomly assigned number between 1 and 26 (inclusive).
+
+The mapping between numbers and characters is not the standard "1=A, 2=B, ..." mapping. You must determine the correct character for each number by solving the crossword.
+
+Your goal is to solve the crossword and recover the original alphabetical characters.
+
+## Flag Construction
+Once the crossword has been solved, construct the flag as follows.
+Given the following solved crossword:
+
+. . . . F O R M S .
+. . . . L . . O . .
+. K B X A C . U . .
+. I . . G . . S . .
+. D . . . S P E A K
+
+Read the alphabetical characters row by row, from left to right.
+
+For each row:
+1. Extract all alphabetical characters from left to right.
+2. Keep the rows in their original top-to-bottom order.
+3. Separate each row using "_".
+4. Enclose the resulting string in "kBxAc{...}".
+
+This produces:
+FORMS_LO_KBXACU_IGS_DSPEAK
+
+Therefore, the flag is:
+kBxAc{FORMS_LO_KBXACU_IGS_DSPEAK}

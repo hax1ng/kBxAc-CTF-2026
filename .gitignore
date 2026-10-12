@@ -1,0 +1,38 @@
+# Secrets / infra — never commit
+*.token
+.ctfd_api_token
+team-token.txt
+*.pem
+*.key
+id_rsa*
+*.ovpn
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+venv/
+env/
+.mypy_cache/
+.pytest_cache/
+
+# Editor / OS
+.vscode/
+.idea/
+.DS_Store
+*.swp
+*~
+
+# Build / tooling artifacts
+*.o
+*.a
+node_modules/
+
+# CTF working scratch (kept out of the public repo)
+work/
+analysis.md
+learnings.md
+*_hunt.py
+scratch_*.py
+solve-output.txt

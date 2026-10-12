@@ -1,0 +1,137 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 3.2 Final//EN">
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
+<title>Bank of Endia Online - The Most Secure Bank of Endia - Branch Vault Access</title>
+</head>
+<body bgcolor="#008080" text="#000000" link="#0000FF" vlink="#800080" alink="#FF0000">
+
+<center>
+<table width="640" cellpadding="0" cellspacing="0" border="0" bgcolor="#FFFFFF">
+<tr><td>
+
+  <table width="100%" cellpadding="8" cellspacing="0" border="0" bgcolor="#000080">
+  <tr>
+    <td width="70" valign="middle" align="center">
+      <table cellpadding="0" cellspacing="0" border="2" bordercolor="#FFD700"><tr><td bgcolor="#000080">
+        <font face="Times New Roman, Times, serif" size="5" color="#FFD700"><b>&nbsp;B&nbsp;</b></font>
+      </td></tr></table>
+    </td>
+    <td valign="middle">
+      <font face="Times New Roman, Times, serif" size="5" color="#FFFFFF"><b>BANK OF ENDIA</b></font><br>
+      <font face="Arial, Helvetica, sans-serif" size="2" color="#FFFF00">The Most Secure Bank of Endia &#149; Established 1891 &#149; Branch banking online since 1998</font>
+    </td>
+  </tr>
+  </table>
+
+  <table width="100%" cellpadding="4" cellspacing="0" border="0" bgcolor="#C0C0C0">
+  <tr>
+    <td align="center">
+      <font face="Arial, Helvetica, sans-serif" size="2">
+      <a href="/">Home</a> | <b>Branch Services</b> | <b>Ledger Access</b> | <a href="/health">System Status</a>
+      </font>
+    </td>
+  </tr>
+  </table>
+
+  <marquee behavior="scroll" direction="left" scrollamount="3"><font face="Arial, Helvetica, sans-serif" size="2" color="#800000"><b>*** Welcome to Bank of Endia Online *** The Most Secure Bank of Endia *** New! Vault Authorization now available over the branch dial-up network *** Please disconnect after your session ***</b></font></marquee>
+  <hr>
+
+  <center>
+  <table width="90%" cellpadding="6" cellspacing="0" border="1" bordercolor="#000000" bgcolor="#FFFFCC">
+  <tr><td align="center">
+    <font face="Arial, Helvetica, sans-serif" size="2"><b><blink>[SECURE]</blink> BRANCH CONNECTION</b> -- Bank of Endia private network / HQ-01 -- 28.8 kbps</font>
+  </td></tr>
+  </table>
+  </center>
+
+  <br>
+
+  <center>
+  <table width="90%" cellpadding="10" cellspacing="0" border="2" bordercolor="#808080" bgcolor="#FFFFFF">
+  <tr><td>
+    <font face="Times New Roman, Times, serif" size="4" color="#000080"><b>Vault Authorization</b></font>
+    <hr>
+    <font face="Times New Roman, Times, serif" size="3">Enter your branch ledger credentials to request access to the master vault.</font>
+    <br><br>
+    <form id="f" method="POST" action="/api/vault/auth">
+      <font face="Arial, Helvetica, sans-serif" size="2"><b>Ledger Username:</b></font><br>
+      <input id="user" name="user" type="text" size="16" maxlength="16" autocomplete="off"><br><br>
+      <font face="Arial, Helvetica, sans-serif" size="2"><b>Authorization Code:</b></font><br>
+      <input id="pass" name="pass" type="password" size="16" maxlength="16" autocomplete="off"><br><br>
+      <input type="submit" value="  Submit Authorization  ">
+      <input type="reset" value="Clear">
+    </form>
+    <br>
+    <pre id="out" style="background:#000000; color:#00FF00; border:1px solid #555; padding:8px; font-family:'Courier New',monospace; font-size:12px; white-space:pre-wrap; display:none;"></pre>
+    <hr>
+    <font face="Arial, Helvetica, sans-serif" size="1" color="#555555">
+    Authorized branch personnel only. This connection uses the BOE branch ledger protocol v3.2.<br>
+    Unsuccessful access attempts are recorded by the branch security office.<br>
+    Questions? Call your branch operator at <b>1-800-555-0198</b> (Mon-Fri 9am-5pm CST).
+    </font>
+  </td></tr>
+  </table>
+  </center>
+
+  <br>
+  <center>
+    <font face="Arial, Helvetica, sans-serif" size="1">
+    <img src="data:image/gif;base64,R0lGODlhAQABAIAAAP///////yH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" width="88" height="31" border="0" alt="[SECURE SERVER]"><br>
+    <b>You are visitor No.</b>
+    </font>
+    <table cellpadding="2" cellspacing="0" border="1" bordercolor="#000000" bgcolor="#000000"><tr>
+      <td><font face="Courier New, monospace" size="2" color="#00FF00"><b>001337</b></font></td>
+    </tr></table>
+    <font face="Arial, Helvetica, sans-serif" size="1">
+    <br><a href="/">Sign our Guestbook</a> | <a href="/">Branch Webring</a><br>
+    Last updated: March 12, 1998<br>
+    </font>
+  </center>
+
+  <hr>
+  <center>
+    <font face="Arial, Helvetica, sans-serif" size="1" color="#555555">
+    &copy; 1998 Bank of Endia &#149; The Most Secure Bank of Endia &#149; Branch Ledger System 3.2<br>
+    Best viewed with Netscape Navigator 4.0 or Internet Explorer 4.0 at 800 x 600<br>
+    This site optimized for 28.8k dial-up connections
+    </font>
+  </center>
+  <br>
+
+</td></tr>
+</table>
+</center>
+
+<script language="JavaScript">
+document.getElementById('f').onsubmit = function(e) {
+  if (e && e.preventDefault) e.preventDefault();
+  var out = document.getElementById('out');
+  out.style.display = 'block';
+  out.color = '';
+  out.textContent = 'Contacting ledger daemon... please wait (28.8k)...';
+  var xhr = new XMLHttpRequest();
+  xhr.open('POST', '/api/vault/auth', true);
+  xhr.setRequestHeader('Content-Type', 'application/json');
+  xhr.onreadystatechange = function() {
+    if (xhr.readyState === 4) {
+      try {
+        var j = JSON.parse(xhr.responseText);
+        if (j.ledger) { out.textContent = j.ledger; }
+        else { out.textContent = 'ERROR: ' + (j.error || 'Unknown error'); }
+      } catch (err) {
+        out.textContent = 'Gateway error: ' + err;
+      }
+    }
+  };
+  var body = JSON.stringify({
+    user: document.getElementById('user').value,
+    pass: document.getElementById('pass').value
+  });
+  xhr.send(body);
+  return false;
+};
+</script>
+
+</body>
+</html>
